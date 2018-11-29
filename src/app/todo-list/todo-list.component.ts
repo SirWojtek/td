@@ -1,15 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../todo';
 
-@Component(
-  {
-    selector: 'app-todo-list',
-    templateUrl: './todo-list.component.html',
-    styleUrls: ['./todo-list.component.scss']
-  }
-)
+@Component({
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.scss']
+})
 export class TodoListComponent {
-
   @Input()
   todos: Todo[];
 
@@ -19,8 +16,10 @@ export class TodoListComponent {
   @Output()
   toggleComplete: EventEmitter<Todo> = new EventEmitter();
 
-  constructor() {
-  }
+  @Output()
+  spendTimeChanged: EventEmitter<Todo> = new EventEmitter();
+
+  constructor() {}
 
   onToggleTodoComplete(todo: Todo) {
     this.toggleComplete.emit(todo);
@@ -30,4 +29,7 @@ export class TodoListComponent {
     this.remove.emit(todo);
   }
 
+  onSpendTimeChanged(todo: Todo) {
+    this.spendTimeChanged.emit(todo);
+  }
 }
