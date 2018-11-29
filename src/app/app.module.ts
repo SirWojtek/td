@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
 import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
-import { TodoDataService } from './todo-data.service';
+import { TodoListTimerComponent } from './todo-list-timer/todo-list-timer.component';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { TodoDataService } from './todo-data.service';
 import { ApiService } from './api.service';
 
 @NgModule({
@@ -17,15 +18,11 @@ import { ApiService } from './api.service';
     TodoListComponent,
     TodoListFooterComponent,
     TodoListHeaderComponent,
-    TodoListItemComponent
+    TodoListItemComponent,
+    TodoListTimerComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
+  imports: [BrowserModule, FormsModule, HttpModule],
   providers: [TodoDataService, ApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
