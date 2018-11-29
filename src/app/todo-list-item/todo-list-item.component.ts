@@ -25,4 +25,8 @@ export class TodoListItemComponent {
   removeTodo(todo: Todo) {
     this.remove.emit(todo);
   }
+
+  saveTodo() {
+    this.toggleComplete.emit(this.todo);
+  }
 }
