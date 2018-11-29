@@ -3,6 +3,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { interval, Subscription } from 'rxjs';
 
 const TICK_INTERVAL = 0.1; // s
+const MAX_TIME = 30 * 60; // s
 
 @Component({
   selector: 'app-todo-list-timer',
@@ -42,9 +43,13 @@ export class TodoListTimerComponent implements ControlValueAccessor {
 
   startTimer() {
     this.isTimerActive = true;
-    this.intervalSubscription = interval(TICK_INTERVAL * 1000).subscribe(
-      () => (this.value = this.value + TICK_INTERVAL)
-    );
+    this.intervalSubscription = interval(TICK_INTERVAL * 1000).subscribe(() => {
+      if (this.value + TICK_INTERVAL > MAX_TIME) {
+        this.stopTimer();
+        return;
+      }
+      this.value = this.value + TICK_INTERVAL;
+    });
   }
 
   stopTimer() {
