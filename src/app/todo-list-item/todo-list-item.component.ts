@@ -10,9 +10,6 @@ export class TodoListItemComponent {
   @Input()
   todo: Todo;
 
-  // TODO: switch to `todo`
-  timeSpend = 10;
-
   @Output()
   remove: EventEmitter<Todo> = new EventEmitter();
 
