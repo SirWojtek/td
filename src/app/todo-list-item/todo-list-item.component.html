@@ -1,6 +1,11 @@
 <div class="view">
   <app-todo-list-timer [(ngModel)]="todo.timeSpend"></app-todo-list-timer>
   <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-  <label>{{todo.title}}</label>
+  <div>
+    <label>{{todo.title}}</label>
+    <div *ngIf="todo.timeSpend" class="timer-counter">
+      Spend: {{ todo.timeSpend }} s
+    </div>
+  </div>
   <button class="destroy" (click)="removeTodo(todo)"></button>
 </div>
