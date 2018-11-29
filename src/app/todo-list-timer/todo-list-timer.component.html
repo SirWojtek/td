@@ -1,4 +1,7 @@
-<button *ngIf="isTimerActive; else startButton" (click)="stopTimer()">STOP</button>
+<button *ngIf="isTimerActive; else startButton"
+  (click)="stopTimer()"
+  class="button stop">
+</button>
 <ng-template #startButton>
-  <button (click)="startTimer()">START</button>
+  <button (click)="startTimer()" class="button play"></button>
 </ng-template>
