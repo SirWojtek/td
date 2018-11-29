@@ -1,1 +1,4 @@
-<div>{{ value }}</div>
+<button *ngIf="isTimerActive; else startButton" (click)="stopTimer()">STOP</button>
+<ng-template #startButton>
+  <button (click)="startTimer()">START</button>
+</ng-template>
