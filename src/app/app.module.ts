@@ -9,6 +9,7 @@ import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.com
 import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
 import { TodoListTimerComponent } from './todo-list-timer/todo-list-timer.component';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { TodoTimeProgressCircleComponent } from './todo-time-progress-circle/todo-time-progress-circle.component';
 import { TodoDataService } from './todo-data.service';
 import { ApiService } from './api.service';
 
@@ -19,7 +20,8 @@ import { ApiService } from './api.service';
     TodoListFooterComponent,
     TodoListHeaderComponent,
     TodoListItemComponent,
-    TodoListTimerComponent
+    TodoListTimerComponent,
+    TodoTimeProgressCircleComponent
   ],
   imports: [BrowserModule, FormsModule, HttpModule],
   providers: [TodoDataService, ApiService],
